@@ -6,19 +6,20 @@ Super Scroll Progress bar using AngularJS
 
 ## Usage
 
-1. Script reference
+Step 1 : Script Reference
 
 ```html
 <script type="text/javascript" src="js/super-scroll.js"></script>
 ```
 
-2. Dependency Injection
+Step 2 : Dependency Injection
 
 ```javascript
 var yourApp = angular.module("yourModule",["superScroll"]);
 ```
 
-3. Using Super Scroll
+Step 3 : Using Super Scroll
+
 ```html
 <super-scroll color="red" position="'bottom'"></super-scroll>
 ```
