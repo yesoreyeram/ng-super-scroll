@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="superScroll">
+<html ng-app="myModule">
 <head>
 	<title>ng-super-scroll - Angular Scroll Progress Bar</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,39 +58,9 @@ Suspendisse suscipit, velit et maximus luctus, ligula eros euismod orci, vel sem
 Fusce lacus elit, semper eget odio sit amet, aliquet molestie ipsum. Cras pellentesque arcu id felis fermentum facilisis. Proin erat ante, tincidunt nec feugiat sed, convallis sed felis. Morbi metus nulla, ultrices sit amet libero ac, ultrices pretium tellus. Suspendisse suscipit lectus vitae placerat lobortis. Integer nunc ligula, tincidunt at aliquam nec, posuere ut dui. Cras ultrices ac justo eu convallis. Nunc iaculis id odio vitae fermentum. Nunc ullamcorper, nisi vel tempus placerat, quam quam venenatis erat, et efficitur odio lorem eget risus. Curabitur eget convallis eros. Nam leo est, interdum sit amet ligula in, consectetur pharetra libero. Quisque consectetur viverra lectus quis molestie. Duis nec facilisis nisl. Quisque elementum felis ut mattis vestibulum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean tempor, ligula non egestas facilisis, metus ex facilisis est, eu ullamcorper ipsum erat eget tellus.</div>
 	</div>
 	<div id="bottom"></div>
+	<script type="text/javascript" src="js/super-scroll.js"></script>
 	<script type="text/javascript">
-	  	var app = angular.module("superScroll",[]);
-        app.directive("superScroll",function($window){
-            var mydirective ={};
-            mydirective.restrict = 'E';
-            mydirective.replace = true;
-            mydirective.scope = {
-                color : "=color",
-                position: "=position"
-            },
-            mydirective.controller = function($scope){
-                $scope.width="0%";
-                $scope.$on("scrolling",function(){
-                    var s = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-                    var d = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-                    var c = window.innerHeight;
-                    $scope.width =  (s / (d - c)) * 100 + "%";
-                    $scope.$digest();
-                });
-            };
-            mydirective.template = "<div "
-                +"id='ng-scroll-indicator'"
-                +"style='position: fixed; {{position}}: 0px; width: 100%; height: 2px; margin: 0px; left: 0px; z-index: 1100;width:{{width}}'"
-                +"><span id='Progress-bar' class='bar' "
-                +"style=' height: 2px; background:{{color}}; position: fixed;  {{position}}: 0px; width:{{width}};  z-index: 1100;'"
-                +"></span></div>";
-            mydirective.link=function(scope) {
-                angular.element($window).on('scroll', function(e) {
-            		scope.$broadcast('scrolling');
-                });
-            };
-            return mydirective;                                                                                        
-        });
+	  var app = angular.module("myModule",["superScroll"])
 	</script>	
 </body>
 </html>
