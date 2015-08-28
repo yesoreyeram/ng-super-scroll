@@ -28,7 +28,7 @@ body
 #banner
 {
 	/* Image credits : http://images.superfamous.com/California-Aerial-II */
-	background-image:url('../img/bg.jpg');
+	background-image:url('../img/bg.JPG');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
